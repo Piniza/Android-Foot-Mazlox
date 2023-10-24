@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/competitionat">
+    <fragment
+        android:id="@+id/CompetionDetails"
+        android:name="barhoune.habyby.efmandroid.CompetitionFragment"
+        tools:layout="@layout/fragment_competition">
+        <action
+            android:id="@+id/action_CompetionDetails_to_competition2"
+            app:destination="@id/competitionat" />
+        <action
+            android:id="@+id/action_CompetionDetails_to_todayMatchesFragment"
+            app:destination="@id/todayMatchesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/classementFragment"
+        android:name="barhoune.habyby.efmandroid.ClassementFragment"
+        android:label="fragment_classement"
+        tools:layout="@layout/fragment_classement" />
+    <fragment
+        android:id="@+id/equipesFragment"
+        android:name="barhoune.habyby.efmandroid.EquipesFragment"
+        android:label="fragment_equipes"
+        tools:layout="@layout/fragment_equipes">
+        <argument
+            android:name="codeCompetition"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_equipesFragment_to_equipeDetails"
+            app:destination="@id/equipeDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/equipeDetails"
+        android:name="barhoune.habyby.efmandroid.EquipeDetails"
+        android:label="fragment_equipe_details"
+        tools:layout="@layout/fragment_equipe_details" >
+        <argument
+            android:name="teamId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="barhoune.habyby.efmandroid.MatchesFragment"
+        android:label="fragment_matches"
+        tools:layout="@layout/fragment_matches">
+        <argument
+            android:name="codeCompetition"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_matchesFragment_to_matchDetails"
+            app:destination="@id/matchDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchDetails"
+        android:name="barhoune.habyby.efmandroid.MatchDetails"
+        android:label="fragment_match_details"
+        tools:layout="@layout/fragment_match_details" >
+        <argument
+            android:name="matchID"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionat"
+        android:name="barhoune.habyby.efmandroid.CompetitionFragment"
+        android:label="fragment_competition"
+        tools:layout="@layout/fragment_competition">
+        <action
+            android:id="@+id/action_competitionat_to_classementFragment"
+            app:destination="@id/classementFragment" />
+        <action
+            android:id="@+id/action_competitionat_to_matchesFragment"
+            app:destination="@id/matchesFragment" />
+        <action
+            android:id="@+id/action_competitionat_to_equipesFragment"
+            app:destination="@id/equipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todayMatchesFragment"
+        android:name="barhoune.habyby.efmandroid.TodayMatchesFragment"
+        android:label="fragment_today_matches"
+        tools:layout="@layout/fragment_today_matches" >
+        <action
+            android:id="@+id/action_todayMatchesFragment_to_matchDetails"
+            app:destination="@id/matchDetails" />
+    </fragment>
+</navigation>

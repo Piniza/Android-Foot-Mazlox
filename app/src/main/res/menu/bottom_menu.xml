@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/equipesFragment"
+        android:icon="@drawable/equipes"
+        android:title="Equipes" />
+    <item
+        android:id="@+id/competitionat"
+        android:icon="@drawable/competitions"
+        android:title="Compétitions" />
+    <item
+        android:id="@+id/classementFragment"
+        android:icon="@drawable/classement"
+        android:title="Classement" />
+    <item
+        android:id="@+id/matchesFragment"
+        android:icon="@drawable/match"
+        android:title="Matchs" />
+    <item
+        android:id="@+id/todayMatchesFragment"
+        android:icon="@drawable/today"
+        android:title="Matchs du Jour" />
+
+
+</menu>
